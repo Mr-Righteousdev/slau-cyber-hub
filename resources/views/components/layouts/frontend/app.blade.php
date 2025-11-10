@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add to your layout head -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <title>{{ config('app.name') }}</title>
     <script>
         window.setAppearance = function(appearance) {
@@ -64,7 +68,7 @@
 
             <!-- Main Content -->
             <main class="flex-1 overflow-auto bg-gray-100 dark:bg-gray-900 content-transition">
-                <div class="p-6">
+                <div class="">
                     <!-- Success Message -->
                     @session('status')
                         <div x-data="{ showStatusMessage: true }" x-show="showStatusMessage"

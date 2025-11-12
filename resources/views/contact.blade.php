@@ -1,49 +1,48 @@
 <x-layouts.frontend.app>
-    <x-slot name="title">Resources - Cybersecurity & Innovations Club</x-slot>
+    <x-slot name="title">Contact - Cybersecurity & Innovations Club</x-slot>
     
     @section('styles')
     <style>
-        .resource-card {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
-            transition: all 0.3s ease;
+        .contact-glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .resource-card:hover {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
-            transform: translateY(-5px);
+        .map-placeholder {
+            background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .map-placeholder::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px);
         }
     </style>
     @endsection
 
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-gray-900 via-cyan-900 to-gray-900 text-white overflow-hidden">
+    <section class="relative bg-gradient-to-br from-gray-900 via-green-900 to-gray-900 text-white overflow-hidden">
         <div class="absolute inset-0 opacity-10">
-            <div class="absolute inset-0" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(6, 182, 212, 0.3) 2px, rgba(6, 182, 212, 0.3) 4px), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(6, 182, 212, 0.3) 2px, rgba(6, 182, 212, 0.3) 4px); background-size: 50px 50px;"></div>
+            <div class="absolute inset-0" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(34, 197, 94, 0.3) 2px, rgba(34, 197, 94, 0.3) 4px), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(34, 197, 94, 0.3) 2px, rgba(34, 197, 94, 0.3) 4px); background-size: 50px 50px;"></div>
         </div>
         
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
             <div class="text-center">
                 <div class="inline-block mb-6">
-                    <span class="px-4 py-2 bg-cyan-500/20 border border-cyan-400/30 rounded-full text-sm font-medium text-cyan-300 backdrop-blur-sm">
-                        📚 Knowledge Base
+                    <span class="px-4 py-2 bg-green-500/20 border border-green-400/30 rounded-full text-sm font-medium text-green-300 backdrop-blur-sm">
+                        📞 Get in Touch
                     </span>
                 </div>
                 
                 <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-                    <span class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Resources</span> Hub
+                    Let's <span class="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">Connect</span>
                 </h1>
                 
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                    Curated learning materials, tools, and platforms to accelerate your cybersecurity journey from beginner to expert.
+                    Have questions about joining, sponsoring, or collaborating? We're here to help secure the future.
                 </p>
-                
-                <div class="mt-8 flex justify-center">
-                    <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-2 flex">
-                        <button class="px-6 py-2 bg-cyan-500 text-white rounded-md transition">All</button>
-                        <button class="px-6 py-2 text-gray-300 hover:text-white rounded-md transition">Beginner</button>
-                        <button class="px-6 py-2 text-gray-300 hover:text-white rounded-md transition">Advanced</button>
-                        <button class="px-6 py-2 text-gray-300 hover:text-white rounded-md transition">Tools</button>
-                    </div>
-                </div>
             </div>
         </div>
         
@@ -54,128 +53,112 @@
         </div>
     </section>
 
-    <!-- Resource Categories -->
+    <!-- Contact Methods -->
     <section class="py-20 bg-gray-50 dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
                 @php
-                    $categories = [
-                        [
-                            'title' => 'Learning Platforms',
-                            'icon' => '🎯',
-                            'color' => 'blue',
-                            'resources' => [
-                                ['name' => 'TryHackMe', 'desc' => 'Guided rooms for beginners', 'url' => '#'],
-                                ['name' => 'HackTheBox', 'desc' => 'Advanced penetration testing labs', 'url' => '#'],
-                                ['name' => 'picoCTF', 'desc' => 'Beginner-friendly CTF platform', 'url' => '#'],
-                                ['name' => 'OverTheWire', 'desc' => 'Wargames for skill building', 'url' => '#']
-                            ]
-                        ],
-                        [
-                            'title' => 'Study Materials',
-                            'icon' => '📚',
-                            'color' => 'cyan',
-                            'resources' => [
-                                ['name' => 'Security+ Guide', 'desc' => 'Complete certification prep', 'url' => '#'],
-                                ['name' => 'Web Hacking 101', 'desc' => 'Modern web exploitation', 'url' => '#'],
-                                ['name' => 'Binary Exploitation', 'desc' => 'From buffer overflows to ROP', 'url' => '#'],
-                                ['name' => 'Crypto Basics', 'desc' => 'Classical to modern cryptography', 'url' => '#']
-                            ]
-                        ],
-                        [
-                            'title' => 'Tools & Software',
-                            'icon' => '🛠️',
-                            'color' => 'purple',
-                            'resources' => [
-                                ['name' => 'Kali Linux', 'desc' => 'Penetration testing distro', 'url' => '#'],
-                                ['name' => 'Burp Suite', 'desc' => 'Web proxy and scanner', 'url' => '#'],
-                                ['name' => 'Ghidra', 'desc' => 'NSA reverse engineering tool', 'url' => '#'],
-                                ['name' => 'Wireshark', 'desc' => 'Network protocol analyzer', 'url' => '#']
-                            ]
-                        ],
-                        [
-                            'title' => 'Writeups & Archives',
-                            'icon' => '📝',
-                            'color' => 'pink',
-                            'resources' => [
-                                ['name' => 'UCC CyberStars 2024', 'desc' => 'Our podium finish writeup', 'url' => '#'],
-                                ['name' => 'picoCTF 2023', 'desc' => 'All challenge solutions', 'url' => '#'],
-                                ['name' => 'Internal CTFs', 'desc' => 'Previous competition archives', 'url' => '#'],
-                                ['name' => 'Weekly Challenges', 'desc' => 'Practice problems with solutions', 'url' => '#']
-                            ]
-                        ],
-                        [
-                            'title' => 'Video Tutorials',
-                            'icon' => '🎥',
-                            'color' => 'green',
-                            'resources' => [
-                                ['name' => 'Workshop Recordings', 'desc' => 'Past club workshop videos', 'url' => '#'],
-                                ['name' => 'LiveOverflow', 'desc' => 'Binary exploitation series', 'url' => '#'],
-                                ['name' => 'IppSec', 'desc' => 'HackTheBox walkthroughs', 'url' => '#'],
-                                ['name' => 'John Hammond', 'desc' => 'CTF challenge solutions', 'url' => '#']
-                            ]
-                        ],
-                        [
-                            'title' => 'Community',
-                            'icon' => '👥',
-                            'color' => 'yellow',
-                            'resources' => [
-                                ['name' => 'Discord Server', 'desc' => 'Club communication hub', 'url' => '#'],
-                                ['name' => 'GitHub Org', 'desc' => 'Open source projects', 'url' => '#'],
-                                ['name' => 'CTFtime Team', 'desc' => 'Track our competition history', 'url' => '#'],
-                                ['name' => 'Newsletter', 'desc' => 'Weekly security news roundup', 'url' => '#']
-                            ]
-                        ]
+                    $methods = [
+                        ['icon' => '📧', 'title' => 'Email', 'detail' => 'cyber@slu.ca', 'action' => 'mailto:cyber@slu.ca', 'color' => 'blue'],
+                        ['icon' => '💬', 'title' => 'Discord', 'detail' => 'Join our server', 'action' => '#', 'color' => 'purple'],
+                        ['icon' => '📍', 'title' => 'Location', 'detail' => 'Madill Hall 205', 'action' => '#', 'color' => 'green'],
+                        ['icon' => '🐦', 'title' => 'Twitter', 'detail' => '@SLUCyberClub', 'action' => '#', 'color' => 'cyan']
                     ];
                 @endphp
                 
-                @foreach($categories as $category)
-                <div class="resource-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
-                    <div class="flex items-center mb-6">
-                        <div class="text-4xl mr-4">{{ $category['icon'] }}</div>
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">{{ $category['title'] }}</h3>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        @foreach($category['resources'] as $resource)
-                        <div class="flex items-start justify-between p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-{{ $category['color'] }}-50 dark:hover:bg-{{ $category['color'] }}-900/30 transition-all duration-200">
-                            <div>
-                                <div class="font-semibold text-gray-900 dark:text-white">{{ $resource['name'] }}</div>
-                                <div class="text-sm text-gray-600 dark:text-gray-400">{{ $resource['desc'] }}</div>
-                            </div>
-                            <a href="{{ $resource['url'] }}" class="px-3 py-1 bg-{{ $category['color'] }}-100 dark:bg-{{ $category['color'] }}-900/50 text-{{ $category['color'] }}-700 dark:text-{{ $category['color'] }}-300 rounded text-xs hover:bg-{{ $category['color'] }}-200 dark:hover:bg-{{ $category['color'] }}-900/70 transition">
-                                Access
-                            </a>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
+                @foreach($methods as $method)
+                <a href="{{ $method['action'] }}" class="group contact-glass rounded-2xl p-6 text-center hover:bg-{{ $method['color'] }}-500/20 transition-all duration-300 transform hover:scale-105">
+                    <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">{{ $method['icon'] }}</div>
+                    <h3 class="text-xl font-bold text-white mb-2">{{ $method['title'] }}</h3>
+                    <p class="text-gray-300 group-hover:text-white transition">{{ $method['detail'] }}</p>
+                </a>
                 @endforeach
             </div>
             
-            <!-- Quick Links -->
-            <div class="mt-16 bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 border border-cyan-200 dark:border-cyan-800">
-                <div class="text-center mb-6">
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Quick Access</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Most requested resources by members</p>
+            <!-- Contact Form & Map -->
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <!-- Contact Form -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send us a Message</h2>
+                    
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">First Name</label>
+                                <input type="text" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 dark:text-white transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Last Name</label>
+                                <input type="text" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 dark:text-white transition">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 dark:text-white transition">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Subject</label>
+                            <select class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 dark:text-white transition">
+                                <option>General Inquiry</option>
+                                <option>Membership Question</option>
+                                <option>Sponsorship Opportunity</option>
+                                <option>Collaboration Proposal</option>
+                                <option>Media Request</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                            <textarea rows="6" class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 dark:text-white transition" placeholder="Tell us more about your inquiry..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200">
+                            Send Message
+                        </button>
+                    </form>
+                    
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-4 text-center">
+                        We typically respond within 24 hours
+                    </p>
                 </div>
                 
-                <div class="grid md:grid-cols-4 gap-4">
-                    @php
-                        $quick_links = [
-                            ['name' => 'Discord', 'icon' => '💬', 'color' => 'blue'],
-                            ['name' => 'GitHub', 'icon' => '🐙', 'color' => 'gray'],
-                            ['name' => 'Calendar', 'icon' => '📅', 'color' => 'cyan'],
-                            ['name' => 'Drive', 'icon' => '📁', 'color' => 'green']
-                        ];
-                    @endphp
+                <!-- Map & Meeting Info -->
+                <div class="space-y-8">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Meeting Location</h3>
+                        <div class="map-placeholder rounded-lg h-64 mb-4 flex items-center justify-center text-white">
+                            <div class="text-center">
+                                <div class="text-6xl mb-4">📍</div>
+                                <p class="text-xl font-semibold">Madill Hall 205</p>
+                                <p>St. Lawrence University</p>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-gray-600 dark:text-gray-400">
+                            <p class="flex items-center"><span class="text-green-400 mr-2">⏰</span> Tuesdays & Thursdays 6-8 PM</p>
+                            <p class="flex items-center"><span class="text-green-400 mr-2">🚪</span> Open to all SLU students</p>
+                            <p class="flex items-center"><span class="text-green-400 mr-2">💻</span> Bring your laptop</p>
+                        </div>
+                    </div>
                     
-                    @foreach($quick_links as $link)
-                    <a href="#" class="flex flex-col items-center p-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-{{ $link['color'] }}-400 dark:hover:border-{{ $link['color'] }}-400 transition-all duration-300">
-                        <div class="text-3xl mb-2">{{ $link['icon'] }}</div>
-                        <span class="font-medium text-gray-900 dark:text-white">{{ $link['name'] }}</span>
-                    </a>
-                    @endforeach
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 border border-green-200 dark:border-green-800">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">FAQ</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Do I need experience to join?</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">No! We welcome all skill levels.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">How do I become a sponsor?</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Email us at sponsor@slu.ca for our deck.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Can non-SLU students attend?</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Workshops are open to all, but competitions require SLU enrollment.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

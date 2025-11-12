@@ -24,7 +24,7 @@ Welcome to the official website repository for St. Lawrence University's Cyberse
 This website serves as the digital hub for our cybersecurity club, showcasing our achievements, hosting CTF resources, and recruiting new members. Built with Laravel (a PHP framework), even if you're new to web development, this guide will help you get started!
 
 **Tech Stack:**
-- **Backend:** Laravel 11 (PHP Framework)
+- **Backend:** Laravel 12 (PHP Framework)
 - **Frontend:** Blade Templates (Laravel's templating engine)
 - **Database:** MySQL/PostgreSQL
 - **Version Control:** Git & GitHub
